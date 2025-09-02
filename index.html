@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Asilux Research — VolatiliX (VMFI) — Coming Soon</title>
+
+  <!-- SEO / Social -->
+  <meta name="description" content="Asilux Research — Kenya-first market data & insights. VolatiliX Money Flow Index (VMFI) — coming soon. Join the waitlist.">
+  <meta property="og:title" content="Asilux Research — VolatiliX (VMFI)"/>
+  <meta property="og:description" content="Kenya-first data oracle: mobile money anchored macro & micro index. Join the waitlist."/>
+  <meta property="og:image" content="/opengraph.png"/>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <canvas id="bgCanvas" aria-hidden="true"></canvas>
+
+  <header class="topbar">
+    <div class="brand">
+      <!-- Simple SVG logomark -->
+      <svg viewBox="0 0 100 32" width="160" height="40" aria-hidden="true">
+        <defs>
+          <linearGradient id="g" x1="0" x2="1">
+            <stop offset="0" stop-color="#4fd1c5"/>
+            <stop offset="1" stop-color="#6366f1"/>
+          </linearGradient>
+        </defs>
+        <rect rx="6" width="100" height="32" fill="none"></rect>
+        <text x="6" y="22" font-family="Poppins, system-ui, sans-serif" font-weight="700" font-size="14" fill="url(#g)">
+          Asilux
+        </text>
+        <text x="56" y="22" font-family="Inter, system-ui, sans-serif" font-weight="600" font-size="11" fill="#94a3b8">
+          Research
+        </text>
+      </svg>
+    </div>
+    <nav class="top-actions">
+      <a href="#" class="ghost">About</a>
+      <a href="#" class="ghost">Contact</a>
+    </nav>
+  </header>
+
+  <main class="hero">
+    <section class="hero-left">
+      <h1>Asilux Research</h1>
+      <p class="tagline">Kenya-first market intelligence. Micro signals → macro clarity. </p>
+
+      <div class="vmfi-card" role="region" aria-label="VolatiliX Money Flow Index">
+        <div class="vmfi-left">
+          <div class="vmfi-value" id="vmfi-value">—</div>
+          <div class="vmfi-meta">VolatiliX Money Flow Index (VMFI)</div>
+        </div>
+        <div class="vmfi-right">
+          <svg id="spark" viewBox="0 0 120 40" class="sparkline" aria-hidden="true"></svg>
+          <div class="vmfi-change" id="vmfi-change">—</div>
+        </div>
+      </div>
+
+      <p class="lead">
+        We aggregate trusted economic signals and distil them into one actionable index for investors, policymakers, and enterprises across Kenya & Sub-Saharan Africa.
+      </p>
+
+      <!-- WAITLIST FORM — NETLIFY FORMS ready -->
+      <form name="waitlist" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="waitlist" onsubmit="handleForm(event)">
+        <!-- Netlify bot-field -->
+        <input type="hidden" name="form-name" value="waitlist">
+        <p class="visually-hidden"><label>Don’t fill this out if you're human: <input name="bot-field"></label></p>
+
+        <div class="inputs">
+          <input aria-label="Your name" name="name" type="text" placeholder="Your name" required>
+          <input aria-label="Email address" name="email" type="email" placeholder="Email address" required>
+          <button type="submit" class="cta">Join Waitlist</button>
+        </div>
+        <div id="form-msg" class="form-msg" aria-live="polite"></div>
+      </form>
+
+      <p class="foot-note">We will never share your email. By joining the waitlist you agree to be contacted about Asilux Research updates.</p>
+    </section>
+
+    <section class="hero-right" aria-hidden="true">
+      <!-- Decorative / optional place for small explainer charts -->
+      <div class="panel">
+        <div class="panel-title">Snapshot</div>
+        <div class="panel-grid">
+          <div class="tile">
+            <div class="tile-label">Mobile Money Volume</div>
+            <div class="tile-value">KES 6.56T</div>
+            <div class="tile-mini" id="mini-1"></div>
+          </div>
+          <div class="tile">
+            <div class="tile-label">Banking Deposits</div>
+            <div class="tile-value">KES 1.28T</div>
+            <div class="tile-mini" id="mini-2"></div>
+          </div>
+          <div class="tile full">
+            <div class="tile-label">VMFI — 6M Trend</div>
+            <svg id="vmfi-area" viewBox="0 0 300 80"></svg>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div>© <strong>Asilux Research</strong> — Kenya & Sub-Saharan Africa first.</div>
+    <div class="socials">
+      <a href="#" aria-label="Asilux on X">@AsiluxResearch</a>
+      <a href="#" aria-label="LinkedIn">LinkedIn</a>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

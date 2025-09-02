@@ -1,0 +1,101 @@
+/* Asilux Research — Landing page styles (clean, dark, responsive) */
+:root{
+  --bg:#04050a;
+  --muted:#93a4bd;
+  --accent1:#4fd1c5;
+  --accent2:#6366f1;
+  --card:#071126;
+  --glass: rgba(255,255,255,0.03);
+}
+
+/* Reset & base */
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%}
+body{
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  background:var(--bg);
+  color:#e6eef8;
+  -webkit-font-smoothing:antialiased;
+  line-height:1.45;
+  overflow-x:hidden;
+}
+
+/* Canvas backdrop occupies entire viewport */
+#bgCanvas{position:fixed; inset:0; z-index:0; width:100%; height:100%; display:block}
+
+/* Topbar */
+.topbar{
+  position:relative; z-index:12; display:flex; justify-content:space-between; align-items:center;
+  padding:18px 28px;
+}
+.brand{display:flex; align-items:baseline; gap:8px}
+.brand .mark{font-weight:800; font-size:18px; color:var(--accent1)}
+.brand .name{font-weight:600; font-size:12px; color:var(--muted)}
+.topnav .navlink{color:var(--muted); text-decoration:none; margin-left:16px; font-size:14px}
+
+/* HERO layout */
+.hero{
+  position:relative; z-index:10;
+  display:flex; gap:28px; align-items:flex-start; justify-content:center;
+  padding:56px 28px; min-height:calc(100vh - 140px);
+}
+
+/* Left column */
+.hero-left{flex:1; max-width:760px}
+.title{font-size:44px; line-height:1; margin-bottom:6px; color:#fff}
+.subtitle{color:var(--muted); font-size:15px; margin-bottom:16px}
+
+/* VMFI card */
+.vmfi-card{
+  display:flex; align-items:center; justify-content:space-between;
+  background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  border-radius:12px; padding:14px; margin:14px 0; border:1px solid rgba(255,255,255,0.02);
+  box-shadow:0 10px 30px rgba(3,6,16,0.6);
+}
+.vmfi-left{display:flex; flex-direction:column}
+.vmfi-value{font-size:36px; font-weight:800; color:var(--accent2)}
+.vmfi-label{font-size:12px; color:var(--muted)}
+.vmfi-right{display:flex; flex-direction:column; align-items:flex-end}
+.sparkline{width:120px;height:40px}
+.vmfi-change{font-size:13px; margin-top:8px; color:var(--muted)}
+
+/* Lead paragraph */
+.lead{color:var(--muted); margin-top:8px; margin-bottom:16px}
+
+/* Waitlist form */
+.waitlist{margin-top:12px}
+.inputs{display:flex; gap:10px; align-items:center; flex-wrap:wrap}
+.waitlist input[type="text"], .waitlist input[type="email"]{
+  padding:10px 12px; border-radius:10px; border:1px solid rgba(255,255,255,0.04);
+  background:rgba(255,255,255,0.02); color:#fff; outline:none; min-width:160px; flex:1;
+}
+.waitlist input::placeholder{color:#9fb0cc}
+.cta{padding:10px 16px; border-radius:10px; border:none; cursor:pointer;
+  background: linear-gradient(90deg,var(--accent1),var(--accent2)); color:#041025; font-weight:700;}
+
+/* form message */
+.form-msg{margin-top:10px; color:#cfe9ff; font-size:14px}
+
+/* Right column panel */
+.hero-right{width:380px}
+.panel{background:var(--card); padding:14px; border-radius:12px; border:1px solid rgba(255,255,255,0.02)}
+.panel-title{color:var(--muted); font-size:12px; margin-bottom:10px}
+.panel-grid{display:grid; grid-template-columns:1fr 1fr; gap:10px}
+.tile{background:var(--glass); padding:12px; border-radius:8px}
+.tile-label{font-size:11px; color:var(--muted)}
+.tile-value{font-weight:700; margin-top:6px}
+.tile.full{grid-column:1 / -1}
+
+/* footer */
+.site-footer{padding:22px; text-align:center; color:var(--muted); font-size:13px; margin-top:32px}
+
+/* visually hidden */
+.visually-hidden{position:absolute; left:-9999px; width:1px; height:1px; overflow:hidden}
+
+/* Responsive */
+@media (max-width:980px){
+  .hero{flex-direction:column; padding:36px 20px}
+  .hero-right{width:100%}
+  .title{font-size:32px}
+  .topbar{padding:12px 16px}
+}
